@@ -3,8 +3,7 @@ LineageOS-20:
     - git clone https://github.com/LineageOS/android_kernel_oneplus_sm8250 --single-branch -b lineage-21 
   clang:
    # - git clone --depth=1 https://gitlab.com/Jprimero15/lolz_clang.git -b main
-    - mkdir clang
-    - curl https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-14.0.0_r0.2/clang-r450784e.tar.gz -RLO && tar -C clang/ -xf clang-*.tar.gz
+    - curl https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-14.0.0_r0.2/clang-r450784e.tar.gz -RLO && tar -C /kernel/clang/ -xf clang-*.tar.gz
   config:
     - make O=out ARCH=arm64 /vendor/kona_defconfig
   build:
