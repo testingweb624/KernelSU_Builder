@@ -36,5 +36,5 @@ echo "$clang_commands" | while read -r command; do
     eval "$command kernel/"
     pwd
     ls kernel/clang
-    sudo apt-get install lld
+    sudo apt-get install lld clang clang-tools
 done
