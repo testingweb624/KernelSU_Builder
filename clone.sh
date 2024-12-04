@@ -34,4 +34,6 @@ done
 # Clone the clang and append clone path to the command
 echo "$clang_commands" | while read -r command; do
     eval "$command kernel/"
+    pwd
+    ls
 done
