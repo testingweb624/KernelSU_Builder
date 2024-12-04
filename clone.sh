@@ -35,5 +35,6 @@ done
 echo "$clang_commands" | while read -r command; do
     eval "$command kernel/"
     pwd
-    ls
+    ls kernel/clang
+    sudo apt-get install lld
 done
