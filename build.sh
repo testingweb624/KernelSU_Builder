@@ -41,6 +41,7 @@ echo "$build_commands" | while read -r command; do
 done
 
 # Enter the kernel directory
+cp konaconfig ./kernel
 cd kernel || exit 1
 
 # Execute the config commands
