@@ -6,7 +6,7 @@ LineageOS-20:
     - curl https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-14.0.0_r0.2/clang-r450784e.tar.gz -RLO && tar -C clang/ -xf clang-*.tar.gz
     - wget wget https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/961622e926a1b21382dba4dd9fe0e5fb3ee5ab7c.tar.gz && tar -C aarch64/ -xf 961622e926a1b21382dba4dd9fe0e5fb3ee5ab7c.tar.gz
   config:
-    - make O=out ARCH=arm64 /vendor/kona_defconfig
+    - make CONFIG_SECTION_MISMATCH_WARN_ONLY=y O=out ARCH=arm64 /vendor/kona_defconfig
   build:
    # - ARCH=arm64 CC=clang CROSS_COMPILE="${PWD}/clang/bin/aarch64-linux-gnu-" CROSS_COMPILE_COMPAT="${PWD}/clang/bin/arm-linux-gnueabi" CROSS_COMPILE_ARM32="${PWD}/clang/bin/arm-linux-gnueabi-" CLANG_TRIPLE=aarch64-linux-gnu- make -j$(nproc --all) LLVM=1 LLVM_IAS=1 LD=ld.lld AR=llvm-ar NM=llvm-nm AS=llvm-as OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip O=out
      - ARCH=arm64 CC=clang CROSS_COMPILE="${PWD}/aarch64/bin/aarch64-linux-android-" CLANG_TRIPLE=aarch64-linux-gnu- make -j$(nproc --all) LLVM=1 LLVM_IAS=1 LD=ld.lld AR=llvm-ar NM=llvm-nm AS=llvm-as OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip O=out
